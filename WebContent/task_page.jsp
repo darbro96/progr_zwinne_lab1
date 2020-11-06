@@ -13,5 +13,6 @@
 <%="Hello World!"%><br/>
 Data: <%=new SimpleDateFormat("dd-MM-yyyy").format(new Date())%><br/>
 ID Studenta: <%=request.getParameter("x_student_id")%><br/>
+Informacja przekierowana z serwletu: <%= request.getAttribute("x_redirect")%>
 </body>
 </html>
