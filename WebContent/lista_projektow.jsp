@@ -38,13 +38,13 @@
 				<javatime:format value="${projekt.dataOddania}" var="fmtDataOddania"
 					pattern="yyyy-MM-dd" />
 				<td><c:out value="${fmtDataOddania}" /></td>
-				<c:url value="/pages/zadania.jsp" var="linkZadaniaProjektu">
+				<c:url value="/ZadaniaList" var="linkZadaniaProjektu">
 					<c:param name="x_projekt_id" value="${projekt.projektId}" />
 				</c:url>
 				<c:url value="/UsunProjekt" var="linkUsuwaniaProjektu">
 					<c:param name="x_projekt_id" value="${projekt.projektId}" />
 				</c:url>
-				<td><a href='<c:out value="${linkUsuwaniaProjektu}" />'>Zadania</a><br><a href='<c:out value="${linkUsuwaniaProjektu}" />'>Usuń</a></td>
+				<td><a href='<c:out value="${linkZadaniaProjektu}" />'>Zadania</a><br><a href='<c:out value="${linkUsuwaniaProjektu}" />'>Usuń</a></td>
 			</tr>
 		</c:forEach>
 	</table>

@@ -29,5 +29,43 @@ public class Zadanie {
 	@ManyToOne
 	@JoinColumn(name = "projekt_id")
 	private Projekt projekt;
-
+	
+	public Integer getZadanieId() {
+		return zadanieId;
+	}
+	public void setZadanieId(Integer zadanieId) {
+		this.zadanieId = zadanieId;
+	}
+	public String getNazwa() {
+		return nazwa;
+	}
+	public void setNazwa(String nazwa) {
+		this.nazwa = nazwa;
+	}
+	public int getKolejnosc() {
+		return kolejnosc;
+	}
+	public void setKolejnosc(int kolejnosc) {
+		this.kolejnosc = kolejnosc;
+	}
+	public String getOpis() {
+		return opis;
+	}
+	public void setOpis(String opis) {
+		this.opis = opis;
+	}
+	public LocalDateTime getDataczasOddania() {
+		return dataczasOddania;
+	}
+	public void setDataczasOddania(LocalDateTime dataczasOddania) {
+		this.dataczasOddania = dataczasOddania;
+	}
+	public Projekt getProjekt() {
+		return projekt;
+	}
+	public void setProjekt(Projekt projekt) {
+		this.projekt = projekt;
+	}
+	
+	
 }
