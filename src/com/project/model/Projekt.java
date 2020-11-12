@@ -27,6 +27,8 @@ public class Projekt {
 	private Integer projektId;
 	@Column(nullable = false, length = 50)
 	private String nazwa;
+	@Column(name="opis", length = 1000)
+	private String opis;
 	@CreationTimestamp
 	@Column(name = "dataczas_utworzenia", nullable = false, updatable = false)
 	private LocalDateTime dataczasUtworzenia;
@@ -88,6 +90,14 @@ public class Projekt {
 
 	public void setStudenci(Set<Student> studenci) {
 		this.studenci = studenci;
+	}
+
+	public String getOpis() {
+		return opis;
+	}
+
+	public void setOpis(String opis) {
+		this.opis = opis;
 	}
 
 }

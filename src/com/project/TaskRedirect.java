@@ -2,6 +2,7 @@ package com.project;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalDate;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -11,6 +12,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.jboss.logging.Logger;
+import org.jboss.logging.Logger.Level;
+
 /**
  * Servlet implementation class TaskRedirect
  */
@@ -18,6 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 public class TaskRedirect extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String CONTENT_TYPE = "text/html;charset=UTF-8";
+	Logger logger=Logger.getLogger(TaskRedirect.class);
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -36,6 +41,7 @@ public class TaskRedirect extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		processRequest(request, response);
+		logger.log(Level.INFO, "Wywo³ano o "+LocalDate.now());
 	}
 
 	/**
