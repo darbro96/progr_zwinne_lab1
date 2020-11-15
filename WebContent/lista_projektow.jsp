@@ -44,7 +44,10 @@
 				<c:url value="/UsunProjekt" var="linkUsuwaniaProjektu">
 					<c:param name="x_projekt_id" value="${projekt.projektId}" />
 				</c:url>
-				<td><a href='<c:out value="${linkZadaniaProjektu}" />'>Zadania</a><br><a href='<c:out value="${linkUsuwaniaProjektu}" />'>Usuń</a></td>
+				<c:url value="/EdycjaProjektu" var="linkEdycjaProjektu">
+					<c:param name="x_projekt_id" value="${projekt.projektId}" />
+				</c:url>
+				<td><a href='<c:out value="${linkZadaniaProjektu}" />'>Zadania</a><br><a href='<c:out value="${linkEdycjaProjektu}" />'>Edytuj</a><br><a href='<c:out value="${linkUsuwaniaProjektu}" />'>Usuń</a></td>
 			</tr>
 		</c:forEach>
 	</table>

@@ -23,6 +23,7 @@
 			<th>Nazwa</th>
 			<th>Opis</th>
 			<th>Projekt_id</th>
+			<th>Edycja</th>
 		</tr>
 		<c:forEach var="zadanie" items="${requestScope.zadania}"
 			varStatus="info">
@@ -32,6 +33,13 @@
 				<td><c:out value="${zadanie.nazwa}" /></td>
 				<td><c:out value="${zadanie.opis}" /></td>
 				<td><c:out value="${zadanie.projekt.projektId}" /></td>
+				<c:url value="/EdycjaZadania" var="linkEdycjaZadania">
+					<c:param name="x_zadanie_id" value="${zadanie.zadanieId}" />
+				</c:url>
+				<c:url value="/UsunZadanie" var="linkUsunZadanie">
+					<c:param name="x_zadanie_id" value="${zadanie.zadanieId}" />
+				</c:url>
+				<td><a href='<c:out value="${linkEdycjaZadania}" />'>Edytuj</a><br><a href='<c:out value="${linkUsunZadanie}" />'>Usuń</a></td>
 			</tr>
 		</c:forEach>
 	</table>
