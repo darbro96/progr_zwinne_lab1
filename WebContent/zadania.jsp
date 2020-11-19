@@ -8,15 +8,23 @@
 <head>
 <meta charset="UTF-8">
 <title>Lista zadań</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
 </head>
 <body>
+<ul>
+<li><a class="active" href="#about">PeojektHUB</a></li>
+  <li><a href="#"> >> Lista projektów</a></li>
+</ul>
+<div id="center">
 	<h2>Lista zadań</h2>
-	<h1>Projekt: ${requestScope.projekt.nazwa}</h1>
+	<h2>Projekt: ${requestScope.projekt.nazwa}</h2>
 	<c:url value="/DodawanieZadania" var="linkDodawanieZadania">
 	<c:param name="x_projekt_id" value="${projekt.projektId}" />
 	</c:url>
-	<a href='<c:out value="${linkDodawanieZadania}" />'>Nowe zadania</a>
-	<table border="1" cellpadding="3">
+	<div id="actionButton"><a class="button" href='<c:out value="${linkDodawanieZadania}" />'> (+)  Nowe zadania</a></div><br>
+	<table cellpadding="3">
 		<tr>
 			<th>Lp.</th>
 			<th>Id</th>
@@ -39,7 +47,7 @@
 				<c:url value="/UsunZadanie" var="linkUsunZadanie">
 					<c:param name="x_zadanie_id" value="${zadanie.zadanieId}" />
 				</c:url>
-				<td><a href='<c:out value="${linkEdycjaZadania}" />'>Edytuj</a><br><a href='<c:out value="${linkUsunZadanie}" />'>Usuń</a></td>
+				<td><a class="button" href='<c:out value="${linkEdycjaZadania}" />'>Edytuj</a><a class="button" href='<c:out value="${linkUsunZadanie}" />'>Usuń</a></td>
 			</tr>
 		</c:forEach>
 	</table>
